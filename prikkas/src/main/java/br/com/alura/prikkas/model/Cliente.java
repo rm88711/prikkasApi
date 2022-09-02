@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Cliente {
 
     @Id
-    @Column(name=" ID_CLIENTE ")
+    @Column(name="ID_CLIENTE")
     @GeneratedValue(generator = "cliente", strategy = GenerationType.SEQUENCE)
     private Long id;
 
