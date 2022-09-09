@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Table(name = "T_PR_CARDAPIO")
 @SequenceGenerator(name = "cardapio",sequenceName = "SQ_PR_CARDAPIO", allocationSize = 1)
 public class Cardapio {
-
+//ok
     @Id
     @Column(name="ID_CARDAPIO")
     @GeneratedValue(generator = "cardapio", strategy = GenerationType.SEQUENCE)

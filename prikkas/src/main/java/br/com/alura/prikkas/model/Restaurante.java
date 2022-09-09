@@ -15,19 +15,19 @@ public class Restaurante {
     @Column(name="NM_RESTAURANTE", nullable = false, length = 50)
     private String nomeRestaurante;
 
-    @Column(name="NR_CNPJ_REST", nullable = false, length = 14)
-    private  Long CNPJ;
+    @Column(name="NR_CNPJ_REST", nullable = false, length = 18)
+    private  String CNPJ;
 
     @Column(name="DS_EMAIL", nullable = false, length = 100)
     private String desEmail;
 
-    public Restaurante(String nomeRestaurante, Long CNPJ, String desEmail) {
+    public Restaurante() {
+    }
+
+    public Restaurante(String nomeRestaurante, String CNPJ, String desEmail) {
         this.nomeRestaurante = nomeRestaurante;
         this.CNPJ = CNPJ;
         this.desEmail = desEmail;
-    }
-
-    public Restaurante() {
     }
 
     public Long getIdRestaurante() {
@@ -46,11 +46,11 @@ public class Restaurante {
         this.nomeRestaurante = nomeRestaurante;
     }
 
-    public Long getCNPJ() {
+    public String getCNPJ() {
         return CNPJ;
     }
 
-    public void setCNPJ(Long CNPJ) {
+    public void setCNPJ(String CNPJ) {
         this.CNPJ = CNPJ;
     }
 

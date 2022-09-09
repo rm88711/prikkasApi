@@ -13,34 +13,23 @@ public class Endereco {
     @GeneratedValue(generator = "endereco", strategy = GenerationType.SEQUENCE)
     private Long idEndereco;
 
-    @Column(name="NM_ESTADO", nullable = false, length = 20)
-    private String estado;
 
-    @Column(name="SG_ESTADO", nullable = false, length = 20)
-    private String siglaEstado;
+    @Column(name="NR_CEP", nullable = false, length = 20)
+    private String cep;
 
     @Column(name="DS_LOGRADOURO", nullable = false, length = 80)
     private String logradouro;
 
-    @Column(name="NM_BAIRRO", nullable = false, length = 30)
+    @Column(name="ID_BAIRRO", nullable = false, length = 30)
     private String bairro;
-
-    @Column(name="NM_CIDADE", nullable = false, length = 20)
-    private String cidade;
-
-    @Column(name="DS_ENDERECO", nullable = false, length = 20)
-    private String descricaoEndereco;
 
     public Endereco() {
     }
 
-    public Endereco(String estado, String siglaEstado, String logradouro, String bairro, String cidade, String descricaoEndereco) {
-        this.estado = estado;
-        this.siglaEstado = siglaEstado;
+    public Endereco(String cep, String logradouro, String bairro) {
+        this.cep = cep;
         this.logradouro = logradouro;
         this.bairro = bairro;
-        this.cidade = cidade;
-        this.descricaoEndereco = descricaoEndereco;
     }
 
     public Long getIdEndereco() {
@@ -51,20 +40,12 @@ public class Endereco {
         this.idEndereco = idEndereco;
     }
 
-    public String getEstado() {
-        return estado;
+    public String getCep() {
+        return cep;
     }
 
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
-
-    public String getSiglaEstado() {
-        return siglaEstado;
-    }
-
-    public void setSiglaEstado(String siglaEstado) {
-        this.siglaEstado = siglaEstado;
+    public void setCep(String cep) {
+        this.cep = cep;
     }
 
     public String getLogradouro() {
@@ -81,21 +62,5 @@ public class Endereco {
 
     public void setBairro(String bairro) {
         this.bairro = bairro;
-    }
-
-    public String getCidade() {
-        return cidade;
-    }
-
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
-    }
-
-    public String getDescricaoEndereco() {
-        return descricaoEndereco;
-    }
-
-    public void setDescricaoEndereco(String descricaoEndereco) {
-        this.descricaoEndereco = descricaoEndereco;
     }
 }

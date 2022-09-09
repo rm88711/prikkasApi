@@ -12,18 +12,26 @@ public class Carrinho {
     @Column(name = "ID_PAGAMENTO")
     private Long idPagamento;
 
-    @Column(name="ID_PEDIDO ", nullable = false, length = 10)
+    @Column(name="NR_PEDIDO", nullable = false, length = 10)
     private Long idPedido;
 
-    @Column(name=" DS_PAGAMENTO ", nullable = false, length = 15)
+    @Column(name="ID_CLIENTE", nullable = false, length = 15)
     private String pagamento;
 
-    public Carrinho(Long idPedido, String pagamento) {
-        this.idPedido = idPedido;
-        this.pagamento = pagamento;
-    }
+    @Column(name="ID_ENDERECO", nullable = false, length = 10)
+    private String idEndereco;
+
+    @Column(name="ID_TP_PAGTO", nullable = false, length = 10)
+    private String tpPagamento;
 
     public Carrinho() {
+    }
+
+    public Carrinho(Long idPedido, String pagamento, String idEndereco, String tpPagamento) {
+        this.idPedido = idPedido;
+        this.pagamento = pagamento;
+        this.idEndereco = idEndereco;
+        this.tpPagamento = tpPagamento;
     }
 
     public Long getIdPagamento() {
@@ -48,5 +56,21 @@ public class Carrinho {
 
     public void setPagamento(String pagamento) {
         this.pagamento = pagamento;
+    }
+
+    public String getIdEndereco() {
+        return idEndereco;
+    }
+
+    public void setIdEndereco(String idEndereco) {
+        this.idEndereco = idEndereco;
+    }
+
+    public String getTpPagamento() {
+        return tpPagamento;
+    }
+
+    public void setTpPagamento(String tpPagamento) {
+        this.tpPagamento = tpPagamento;
     }
 }

@@ -9,7 +9,7 @@ import java.util.Date;
 public class Pedido {
 
     @Id
-    @Column(name = "ID_PEDIDO")
+    @Column(name = "NR_PEDIDO")
     @GeneratedValue(generator = "pedido",strategy = GenerationType.SEQUENCE)
     private Long idPedido;
 
@@ -22,9 +22,6 @@ public class Pedido {
     @Column(name="DT_PEDIDO")
     private Date dtPedido;
 
-    @Column(name="NR_PEDIDO", nullable = false, length = 20)
-    private Long nrPedido;
-
     @Column(name="VL_PEDIDO", nullable = false, length = 20)
     private Double vlPedido;
 
@@ -34,11 +31,10 @@ public class Pedido {
     public Pedido() {
     }
 
-    public Pedido( Long idCliente, Long idEndereco, Date dtPedido, Long nrPedido, Double vlPedido, String dsStatusPedido) {
+    public Pedido(Long idCliente, Long idEndereco, Date dtPedido, Double vlPedido, String dsStatusPedido) {
         this.idCliente = idCliente;
         this.idEndereco = idEndereco;
         this.dtPedido = dtPedido;
-        this.nrPedido = nrPedido;
         this.vlPedido = vlPedido;
         this.dsStatusPedido = dsStatusPedido;
     }
@@ -73,14 +69,6 @@ public class Pedido {
 
     public void setDtPedido(Date dtPedido) {
         this.dtPedido = dtPedido;
-    }
-
-    public Long getNrPedido() {
-        return nrPedido;
-    }
-
-    public void setNrPedido(Long nrPedido) {
-        this.nrPedido = nrPedido;
     }
 
     public Double getVlPedido() {

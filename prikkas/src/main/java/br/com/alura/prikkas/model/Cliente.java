@@ -11,13 +11,13 @@ public class Cliente {
     @GeneratedValue(generator = "cliente", strategy = GenerationType.SEQUENCE)
     private Long id;
 
-    @Column(name="NM_CLIENTE", nullable = false, length = 150)
+    @Column(name="NM_CLIENTE", nullable = false, length = 60)
     private String nome;
 
     @Column(name="NR_CPF", nullable = false, length = 20)
     private Long cpf;
 
-    @Column(name="DS_EMAIL", nullable = false, length = 200)
+    @Column(name="DS_EMAIL", nullable = false, length = 100)
     private String email;
 
     public Cliente(String nome, Long cpf, String email) {
