@@ -9,9 +9,9 @@ import javax.persistence.*;
 public class Endereco {
 
     @Id
-    @Column(name="ID_ESTADO")
+    @Column(name="ID_ENDERECO")
     @GeneratedValue(generator = "endereco", strategy = GenerationType.SEQUENCE)
-    private Long idEstado;
+    private Long idEndereco;
 
     @Column(name="NM_ESTADO", nullable = false, length = 20)
     private String estado;
@@ -43,12 +43,12 @@ public class Endereco {
         this.descricaoEndereco = descricaoEndereco;
     }
 
-    public Long getIdEstado() {
-        return idEstado;
+    public Long getIdEndereco() {
+        return idEndereco;
     }
 
-    public void setIdEstado(Long idEstado) {
-        this.idEstado = idEstado;
+    public void setIdEndereco(Long idEndereco) {
+        this.idEndereco = idEndereco;
     }
 
     public String getEstado() {
