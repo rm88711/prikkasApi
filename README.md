@@ -1,4 +1,4 @@
-# prikkasApi
+# PrikkasApi
 ------------------------------------------------------------------------------
   Api para manipulação de dados do banco
 
