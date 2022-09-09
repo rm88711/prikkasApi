@@ -11,3 +11,5 @@ As APIs estarão em nuvem (Azure) e serão feitas em Java, as Api deverão envia
 comando para a Machine Learning.
 
 Esta Api esta sendo feita apenas para manipulação de informações do Banco de Dados.
+Ela deverá receber informções do App em React-native para realizar o cadastro e alterações de informações do banco de dados Oracle.
+
