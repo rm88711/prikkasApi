@@ -23,6 +23,12 @@ Ela deverá receber informções do App em React-native para realizar o cadastro
   
   Resposta : deve restornar todos os restaurantes cadastrados de forma paginada.
   
+Exemplo de requisição :
+  
+  ```
+    localhost:8080/api/restaurante/
+  ```
+  
 <details>
 <summary>Exemplo de reponse:</summary><br>
 {
