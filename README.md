@@ -513,3 +513,185 @@ Exemplo de requisição :
   
   -----------------------------------------------------------------------------------------------------------------------------------------------------------
   -----------------------------------------------------------------------------------------------------------------------------------------------------------
+  ## Endereco:
+### Retorno de informações :
+
+   Metodo **GET** 
+  
+  URL : **/api/endereco**
+  
+  Resposta : deve restornar todos o endereços de forma paginada.
+  
+Exemplo de requisição :
+  
+  ```
+    localhost:8080/api/endereco
+  ```
+  
+  <details>
+<summary>Exemplo de resposta:</summary><br>
+{
+	"content": [
+		{
+			"idEndereco": 2,
+			"cep": "17120970",
+			"logradouro": "RUA BOLA , N 3",
+			"bairro": "2"
+		},
+		{
+			"idEndereco": 1,
+			"cep": "90842355",
+			"logradouro": "RUA 3 , N 9",
+			"bairro": "1"
+		},
+		{
+			"idEndereco": 3,
+			"cep": "6462999",
+			"logradouro": "Rua José , número 71",
+			"bairro": "2"
+		}
+	],
+	"pageable": {
+		"sort": {
+			"empty": true,
+			"sorted": false,
+			"unsorted": true
+		},
+		"offset": 0,
+		"pageNumber": 0,
+		"pageSize": 50,
+		"paged": true,
+		"unpaged": false
+	},
+	"last": true,
+	"totalElements": 3,
+	"totalPages": 1,
+	"size": 50,
+	"number": 0,
+	"sort": {
+		"empty": true,
+		"sorted": false,
+		"unsorted": true
+	},
+	"first": true,
+	"numberOfElements": 3,
+	"empty": false
+}
+</details>
+----------------------------------------------------------------------------------------------------------------------
+  Metodo **GET** 
+  
+  URL : **/api/endereco/{id}**
+  
+  Resposta : deve restornar o retaurante desse do {id}
+  
+  Exemplo de requisição :
+  
+  ```
+    localhost:8080/api/endereco/2
+  ```
+  
+  Exemplo de resposta :
+  
+  ```
+  {
+"idEndereco": 2,
+"cep": "17120970",
+"logradouro": "RUA BOLA , N 3",
+"bairro": "2"
+}
+  ```
+
+----------------------------------------------------------------------------------------------------------------------
+  ### Cadastro
+  
+  **Função** : Cadastrar um novo endereço.
+  
+  Metodo **POST** 
+  
+  URL : **/api/endereco**
+  
+  | Campo do Json  | Tipo |
+| ------------- | ------------- |
+| cep  | String  |
+| logradouro  | String  |
+| bairro  | Long  |
+
+
+  Exemplo de requisição :
+  
+  ```
+{
+"cep": "06462909",
+"logradouro": "Rua José , número 71",
+"bairro": "2"
+}
+  ```
+  
+  Exemplo de reposta :
+  ```
+{
+"idEndereco": 4,
+"cep": "06462909",
+"logradouro": "Rua José , número 71",
+"bairro": "2"
+}
+  ```
+ ---------------------------------------------------------------------------------------------------------------------------------------------------
+ ### Alteração
+  **Função** : Deve alterar as informações do nedereço
+  Deve passa a URL com o id do endereço que se quer alterar, no json deve informa o json existem na criação com as alterações desejadas.
+  
+  Metodo **PUT** 
+  
+  URL : **/api/endereco/{id}**
+    
+    
+  | Campo do Json  | Tipo |
+| ------------- | ------------- |
+| cep  | String  |
+| logradouro  | String  |
+| bairro  | Long  |
+
+
+  Exemplo de requisição :
+
+  
+```
+{
+"cep": "06462909",
+"logradouro": "Rua José , número 71",
+"bairro": "2"
+}
+```
+    
+  Exemplo de reposta :
+  ```
+{
+"idEndereco": 4,
+"cep": "06462909",
+"logradouro": "Rua José , número 71",
+"bairro": "2"
+}
+  ```
+  
+  --------------------------------------------------------------------------------------------------------------------------------------------------------
+  
+  ### Apaga
+  
+  **Função** : remove algum endereço.
+  Deve passa a URL com o ID do endereço a ser apagado.
+  
+  Metodo : **DELETE**
+  
+  URL : **/api/endereco/{id}**
+  
+  Exemplo de requisição :
+  ```
+  localhost:8080/api/endereco/2
+  ```
+  
+  Deve retornar um 204 se der certo.
+  
+  -----------------------------------------------------------------------------------------------------------------------------------------------------------
+  -----------------------------------------------------------------------------------------------------------------------------------------------------------
