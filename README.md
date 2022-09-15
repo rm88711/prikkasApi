@@ -639,7 +639,7 @@ Exemplo de requisição :
   ```
  ---------------------------------------------------------------------------------------------------------------------------------------------------
  ### Alteração
-  **Função** : Deve alterar as informações do nedereço
+  **Função** : Deve alterar as informações do endereço
   Deve passa a URL com o id do endereço que se quer alterar, no json deve informa o json existem na criação com as alterações desejadas.
   
   Metodo **PUT** 
@@ -689,6 +689,205 @@ Exemplo de requisição :
   Exemplo de requisição :
   ```
   localhost:8080/api/endereco/2
+  ```
+  
+  Deve retornar um 204 se der certo.
+  
+  -----------------------------------------------------------------------------------------------------------------------------------------------------------
+  -----------------------------------------------------------------------------------------------------------------------------------------------------------
+  ## Telefone:
+### Retorno de informações :
+
+   Metodo **GET** 
+  
+  URL : **/api/telefone**
+  
+  Resposta : deve restornar todos o telefones de forma paginada.
+  
+Exemplo de requisição :
+  
+  ```
+    localhost:8080/api/telefone
+  ```
+  
+  <details>
+<summary>Exemplo de resposta:</summary><br>
+{
+	"content": [
+		{
+			"idTelefone": 3,
+			"nrTelefone": 11998877,
+			"nrDDD": 11,
+			"nrDDI": 55,
+			"descricao": "CELULAR"
+		},
+		{
+			"idTelefone": 1,
+			"nrTelefone": 191,
+			"nrDDD": 111,
+			"nrDDI": 222,
+			"descricao": "TIM"
+		},
+		{
+			"idTelefone": 2,
+			"nrTelefone": 97793821,
+			"nrDDD": 11,
+			"nrDDI": 55,
+			"descricao": "CELULAR"
+		},
+		{
+			"idTelefone": 4,
+			"nrTelefone": 11991177,
+			"nrDDD": 11,
+			"nrDDI": 55,
+			"descricao": "CELULAR"
+		}
+	],
+	"pageable": {
+		"sort": {
+			"empty": true,
+			"sorted": false,
+			"unsorted": true
+		},
+		"offset": 0,
+		"pageNumber": 0,
+		"pageSize": 50,
+		"paged": true,
+		"unpaged": false
+	},
+	"last": true,
+	"totalElements": 4,
+	"totalPages": 1,
+	"size": 50,
+	"number": 0,
+	"sort": {
+		"empty": true,
+		"sorted": false,
+		"unsorted": true
+	},
+	"first": true,
+	"numberOfElements": 4,
+	"empty": false
+}
+</details>
+----------------------------------------------------------------------------------------------------------------------
+  Metodo **GET** 
+  
+  URL : **/api/telefone/{id}**
+  
+  Resposta : deve restornar o telefones desse do {id}
+  
+  Exemplo de requisição :
+  
+  ```
+    localhost:8080/api/telefone/3
+  ```
+  
+  Exemplo de resposta :
+  
+  ```
+ {
+	"idTelefone": 3,
+	"nrTelefone": 11998877,
+	"nrDDD": 11,
+	"nrDDI": 55,
+	"descricao": "CELULAR"
+}
+  ```
+
+----------------------------------------------------------------------------------------------------------------------
+  ### Cadastro
+  
+  **Função** : Cadastrar um novo telefone.
+  
+  Metodo **POST** 
+  
+  URL : **/api/telefone**
+  
+  | Campo do Json  | Tipo |
+| ------------- | ------------- |
+| nrTelefone  | Long  |
+| nrDDD  | Long  |
+| nrDDI  | Long  |
+| descricao  | String  |
+
+
+  Exemplo de requisição :
+  
+  ```
+{	
+"nrTelefone": 11991177,
+"nrDDD": 11,
+"nrDDI": 55,
+"descricao": "CELULAR"
+}
+  ```
+  
+  Exemplo de reposta :
+  ```
+{
+	"idTelefone": 4,
+	"nrTelefone": 11991177,
+	"nrDDD": 11,
+	"nrDDI": 55,
+	"descricao": "CELULAR"
+}
+  ```
+ ---------------------------------------------------------------------------------------------------------------------------------------------------
+ ### Alteração
+  **Função** : Deve alterar as informações do telefone
+  Deve passa a URL com o id do telefone que se quer alterar, no json deve informa o json existem na criação com as alterações desejadas.
+  
+  Metodo **PUT** 
+  
+  URL : **/api/telefone/{id}**
+    
+    
+  | Campo do Json  | Tipo |
+| ------------- | ------------- |
+| nrTelefone  | Long  |
+| nrDDD  | Long  |
+| nrDDI  | Long  |
+| descricao  | String  |
+
+
+  Exemplo de requisição :
+
+  
+```
+{	
+"nrTelefone": 11991177,
+"nrDDD": 11,
+"nrDDI": 55,
+"descricao": "CELULAR"
+}
+```
+    
+  Exemplo de reposta :
+  ```
+{
+	"idTelefone": 4,
+	"nrTelefone": 11991177,
+	"nrDDD": 11,
+	"nrDDI": 55,
+	"descricao": "CELULAR"
+}
+  ```
+  
+  --------------------------------------------------------------------------------------------------------------------------------------------------------
+  
+  ### Apaga
+  
+  **Função** : remove algum telefone.
+  Deve passa a URL com o ID do telefone a ser apagado.
+  
+  Metodo : **DELETE**
+  
+  URL : **/api/telefone/{id}**
+  
+  Exemplo de requisição :
+  ```
+  localhost:8080/api/telefone/2
   ```
   
   Deve retornar um 204 se der certo.
