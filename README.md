@@ -97,11 +97,12 @@ Exemplo de requisição :
   -----------------------------------------------------------------------------------------------------------
   ### Cadastro
   
-    Metodo **POST** 
+  Metodo **POST** 
   
-    URL : **/api/restaurante**
+  URL : **/api/restaurante**
     
   Exemplo de requisição :
+  
   ```
   	{
 			"nomeRestaurante": "pocahontas",
