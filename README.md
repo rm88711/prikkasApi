@@ -1412,3 +1412,167 @@ Exemplo de requisição :
   
   -----------------------------------------------------------------------------------------------------------------------------------------------------------
   -----------------------------------------------------------------------------------------------------------------------------------------------------------
+  
+  ## Tipo de pagamento:
+### Retorno de informações :
+
+   Metodo **GET** 
+  
+  URL : **/api/tipopagamento**
+  
+  Resposta : deve restornar todos o tipo de pagamentos de forma paginada.
+  
+Exemplo de requisição :
+  
+  ```
+    localhost:8080/api/tipopagamento
+  ```
+  
+  <details>
+<summary>Exemplo de resposta:</summary><br>
+{
+	"content": [
+		{
+			"idPagamento": 6,
+			"descrição": "CRÉDITO"
+		},
+		{
+			"idPagamento": 1,
+			"descrição": "PIX"
+		},
+		{
+			"idPagamento": 2,
+			"descrição": "DEBITO"
+		}
+	],
+	"pageable": {
+		"sort": {
+			"empty": true,
+			"sorted": false,
+			"unsorted": true
+		},
+		"offset": 0,
+		"pageNumber": 0,
+		"pageSize": 50,
+		"paged": true,
+		"unpaged": false
+	},
+	"last": true,
+	"totalElements": 3,
+	"totalPages": 1,
+	"size": 50,
+	"number": 0,
+	"sort": {
+		"empty": true,
+		"sorted": false,
+		"unsorted": true
+	},
+	"first": true,
+	"numberOfElements": 3,
+	"empty": false
+}
+</details>
+----------------------------------------------------------------------------------------------------------------------
+  Metodo **GET** 
+  
+  URL : **/api/tipopagamento/{id}**
+  
+  Resposta : deve restornar o tipo de pagamento desse do {id}
+  
+  Exemplo de requisição :
+  
+  ```
+    localhost:8080/api/tipopagamento/2
+  ```
+  
+  Exemplo de resposta :
+  
+  ```
+{
+	"idPagamento": 2,
+	"descrição": "DEBITO"
+}
+  ```
+
+----------------------------------------------------------------------------------------------------------------------
+  ### Cadastro
+  
+  **Função** : Cadastrar um novo tipo de pagamento.
+  
+  Metodo **POST** 
+  
+  URL : **/api/tipopagamento**
+  
+  | Campo do Json  | Tipo |
+| ------------- | ------------- |
+| descrição  | String  |
+
+
+
+  Exemplo de requisição :
+  
+  ```
+{
+"descrição": "Crédito"
+}
+  ```
+  
+  Exemplo de reposta :
+  ```
+{
+"idPagamento": 6,
+"descrição": "CRÉDITO"
+}
+  ```
+ ---------------------------------------------------------------------------------------------------------------------------------------------------
+ ### Alteração
+  **Função** : Deve alterar as informações do tipo de pagamento
+  Deve passa a URL com o id do tipo de pagamento que se quer alterar, no json deve informa o json existem na criação com as alterações desejadas.
+  
+  Metodo **PUT** 
+  
+  URL : **/api/tipopagamento/{id}**
+    
+    
+  | Campo do Json  | Tipo |
+| ------------- | ------------- |
+| descrição  | String  |
+
+
+  Exemplo de requisição :
+
+  
+```
+{
+"descrição": "Crédito"
+}
+```
+    
+  Exemplo de reposta :
+  ```
+{
+"idPagamento": 6,
+"descrição": "CRÉDITO"
+}
+  ```
+  
+  --------------------------------------------------------------------------------------------------------------------------------------------------------
+  
+  ### Apaga
+  
+  **Função** : remove algum tipo de pagamento.
+  Deve passa a URL com o ID do tipo de pagamento a ser apagado.
+  
+  Metodo : **DELETE**
+  
+  URL : **/api/tipopagamento/{id}**
+  
+  Exemplo de requisição :
+  ```
+  localhost:8080/api/tipopagamento/2
+  ```
+  
+  Deve retornar um 204 se der certo.
+  
+  -----------------------------------------------------------------------------------------------------------------------------------------------------------
+  -----------------------------------------------------------------------------------------------------------------------------------------------------------
