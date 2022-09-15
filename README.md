@@ -16,11 +16,11 @@ Ela deverá receber informções do App em React-native para realizar o cadastro
 ##APIs
 #Restaurante:
 
-  Metodo **GET** .
+  Metodo **GET** 
   
   URL : **/api/restaurante**
   
-  Resposta : deve restornar todos os restaurantes cadastrados de forma paginada
+  Resposta : deve restornar todos os restaurantes cadastrados de forma paginada.
   
 <details open>
 <summary>Exemplo de reponse:</summary><br>
@@ -67,3 +67,23 @@ Ela deverá receber informções do App em React-native para realizar o cadastro
 }
 </details>
 
+---------------------------------------------------------------------------------------------------------
+
+  Metodo **GET** 
+  
+  URL : **/api/restaurante/{id}**
+  
+  Resposta : deve restornar o retaurante desse do {id}
+  
+  Exemplo de requisição :
+  ´´´´
+  localhost:8080/api/restaurante/1
+  ´´´´
+  Exemplo de resposta :
+  ´´´´
+  {"nomeRestaurante":"PRIKKAS","desEmail":"prikkas@fiap.com.br","idRestaurante":1,"cnpj":"11830861000113"}
+  ´´´´
+  -----------------------------------------------------------------------------------------------------------
+  
+  
+  
