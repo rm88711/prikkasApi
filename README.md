@@ -131,6 +131,43 @@ Exemplo de requisição :
 }
   ```
 
+  ------------------------------------------------------------------------------------
   
+### Alteração
+  
+  Metodo **PUT** 
+  
+  URL : **/api/restaurante/{id}**
+    
+Deve passa a UTL com o id do restaurante que se quer alterar, no json deve informa o json existem na criação com as alterações desejadas.
+    
+| Campo do Json  | Tipo |
+| ------------- | ------------- |
+| nomeRestaurante  | String  |
+| desEmail  | String  |
+| cnpj  | String  |
+
+
+  Exemplo de requisição :
+  
+  ```
+  {			
+   "nomeRestaurante": "pocahontas",
+   - "desEmail": "pocahontas@fiap.com.br",
+   "cnpj": "11830861000553"
+}
+  ```
+  
+  Função : deve cadastrar com um novo id o restaurante.
+  
+  Exemplo de reposta :
+  ```
+  {
+"nomeRestaurante": "pocahontas",
+"desEmail": "pocahontas@fiap.com.br",
+"idRestaurante": 3,
+"cnpj": "11830861000553"
+}
+  ```
   
   
