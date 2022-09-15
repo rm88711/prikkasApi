@@ -134,12 +134,13 @@ Exemplo de requisição :
   ------------------------------------------------------------------------------------
   
 ### Alteração
+  **Função** : Deve alterar com um novo id o restaurante.
+  Deve passa a URL com o id do restaurante que se quer alterar, no json deve informa o json existem na criação com as alterações desejadas.
   
   Metodo **PUT** 
   
   URL : **/api/restaurante/{id}**
     
-Deve passa a UTL com o id do restaurante que se quer alterar, no json deve informa o json existem na criação com as alterações desejadas.
     
 | Campo do Json  | Tipo |
 | ------------- | ------------- |
@@ -151,16 +152,14 @@ Deve passa a UTL com o id do restaurante que se quer alterar, no json deve infor
   Exemplo de requisição :
 
   
-```diff
+```
   {			
    "nomeRestaurante": "pocahontas",
    "desEmail": "pocahontas@fiap.com.br",
    "cnpj": "11830861000553"
 }
 ```
-  
-  Função : deve cadastrar com um novo id o restaurante.
-  
+    
   Exemplo de reposta :
   ```
   {
@@ -170,5 +169,23 @@ Deve passa a UTL com o id do restaurante que se quer alterar, no json deve infor
 "cnpj": "11830861000553"
 }
   ```
+  ----------------------------------------------------------------------------------------------------------------------------------------------------------
+  ### Apaga
+  
+  **Função** : remove algum restaurante cadastrado.
+  Deve passa a URL com o ID do restaurante a ser apagado.
+  
+  Metodo <span style="color: green">DELETE</span>
+  
+  URL : **/api/restaurante/{id}**
+  
+  Exemplo de requisição :
+  ```
+  localhost:8080/api/restaurante/6
+  ```
+  
+  Deve retornar um 204 se der certo.
+  
+  
   
   
