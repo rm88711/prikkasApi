@@ -24,7 +24,6 @@ Ela deverá receber informções do App em React-native para realizar o cadastro
   
 <details open>
 <summary>Exemplo de reponse:</summary><br>
-````
 {
 	"content": [
 		{
@@ -67,5 +66,4 @@ Ela deverá receber informções do App em React-native para realizar o cadastro
 	"empty": false
 }
 </details>
-````
 
