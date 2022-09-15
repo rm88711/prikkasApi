@@ -1,7 +1,8 @@
 package br.com.alura.prikkas.controller;
 
-import br.com.alura.prikkas.model.Carrinho;
-import br.com.alura.prikkas.service.CarrinhoService;
+
+import br.com.alura.prikkas.model.PedidoItem;
+import br.com.alura.prikkas.service.PedidoItemService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -10,36 +11,35 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import javax.validation.Valid;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/carrinho")
-public class CarrinhoController {
+@RequestMapping("/api/pedidoitem")
+public class PedidoItemController {
+
     @Autowired
-    private CarrinhoService service;
+    private PedidoItemService service;
 
     @GetMapping
-    public Page<Carrinho> index(@PageableDefault(size=50) Pageable paginacao){
-
+    public Page<PedidoItem> index(@PageableDefault(size=50) Pageable paginacao){
         return service.listAll(paginacao);
     }
 
     @PostMapping
-    public ResponseEntity<Carrinho> create(@RequestBody @Valid Carrinho carrinho){
-        service.save(carrinho);
-        return ResponseEntity.status(HttpStatus.CREATED).body(carrinho);
+    public ResponseEntity<PedidoItem> create(@RequestBody @Valid PedidoItem pedidoitem){
+        service.save(pedidoitem);
+        return ResponseEntity.status(HttpStatus.CREATED).body(pedidoitem);
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<Carrinho> show(@PathVariable Long id){
+    public ResponseEntity<PedidoItem> show(@PathVariable Long id){
         return ResponseEntity.of(service.get(id));
     }
 
     @DeleteMapping("{id}")
     public ResponseEntity<Object> destroy(@PathVariable Long id){
-        Optional<Carrinho> optional = service.get(id);
+        Optional<PedidoItem> optional = service.get(id);
 
         if(optional.isEmpty())
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
@@ -49,23 +49,24 @@ public class CarrinhoController {
     }
 
     @PutMapping("{id}")
-    public ResponseEntity<Carrinho> update(@PathVariable Long id, @RequestBody @Valid Carrinho newCarrinho){
+    public ResponseEntity<PedidoItem> update(@PathVariable Long id, @RequestBody @Valid PedidoItem newPedidoItem){
         // carregar a tarefa do banco
-        Optional<Carrinho> optional = service.get(id);
+        Optional<PedidoItem> optional = service.get(id);
 
         // verificar se existe a tarefa com esse id
         if(optional.isEmpty())
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 
         // atualizar os dados
-        Carrinho carrinho = optional.get();
-        BeanUtils.copyProperties(newCarrinho, carrinho);
-        carrinho.setIdPedido(id);
+        PedidoItem pedidoitem = optional.get();
+        BeanUtils.copyProperties(newPedidoItem, pedidoitem);
+        pedidoitem.setIdPedidoItem(id);
 
         // salvar a tarefa
-        service.save(carrinho);
+        service.save(pedidoitem);
 
-        return ResponseEntity.ok(carrinho);
+        return ResponseEntity.ok(pedidoitem);
 
     }
+
 }

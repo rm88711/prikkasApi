@@ -10,7 +10,7 @@ public class PedidoItem {
     @Column(name = "ID_PEDIDO_ITEM")
     private Long idPedidoItem;
 
-    @Column(name = "ID_PEDIDO")
+    @Column(name = "NR_PEDIDO")
     private Long idPedido;
 
     @Column(name = "ID_CARDAPIO")

@@ -22,13 +22,15 @@ public class Carrinho {
     private String idEndereco;
 
     @Column(name="ID_TP_PAGTO", nullable = false, length = 10)
+    //@ManyToOne
+    //@JoinColumn(name = "ID_TP_PAGTO" ,nullable = false)
     private String tpPagamento;
 
     public Carrinho() {
     }
 
-    public Carrinho(Long idPedido, String pagamento, String idEndereco, String tpPagamento) {
-        this.idPedido = idPedido;
+    public Carrinho( String pagamento, String idEndereco, String tpPagamento) {
+       // this.idPedido = idPedido;
         this.pagamento = pagamento;
         this.idEndereco = idEndereco;
         this.tpPagamento = tpPagamento;
