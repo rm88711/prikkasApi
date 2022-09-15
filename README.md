@@ -18,7 +18,7 @@ Ela deverá receber informções do App em React-native para realizar o cadastro
 
   Metodo **GET** .
   
-  URL : /api/restaurante
+  URL : **/api/restaurante**
   
   Resposta : deve restornar todos os restaurantes cadastrados de forma paginada
   
