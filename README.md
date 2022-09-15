@@ -13,9 +13,9 @@ comando para a Machine Learning.
 Esta Api esta sendo feita apenas para manipulação de informações do Banco de Dados.
 Ela deverá receber informções do App em React-native para realizar o cadastro e alterações de informações do banco de dados Oracle.
 
-##APIs
+## APIs
 
-#Restaurante:
+# Restaurante:
 
   Metodo **GET** 
   
@@ -78,15 +78,15 @@ Ela deverá receber informções do App em React-native para realizar o cadastro
   
   Exemplo de requisição :
   
-  ´´´´
-  localhost:8080/api/restaurante/1
-  ´´´´
+  ```
+    localhost:8080/api/restaurante/1
+  ```
   
   Exemplo de resposta :
   
-  ´´´´
+  ```
   {"nomeRestaurante":"PRIKKAS","desEmail":"prikkas@fiap.com.br","idRestaurante":1,"cnpj":"11830861000113"}
-  ´´´´
+  ```
   
   -----------------------------------------------------------------------------------------------------------
   
