@@ -15,8 +15,8 @@ Ela deverá receber informções do App em React-native para realizar o cadastro
 
 ## APIs
 
-# Restaurante:
-
+## Restaurante:
+### Retorno de informações :
   Metodo **GET** 
   
   URL : **/api/restaurante**
@@ -95,6 +95,33 @@ Exemplo de requisição :
   ```
   
   -----------------------------------------------------------------------------------------------------------
+  ### Cadastro
+  
+    Metodo **POST** 
+  
+    URL : **/api/restaurante**
+    
+  Exemplo de requisição :
+  ```
+  	{
+			"nomeRestaurante": "pocahontas",
+			"desEmail": "poc@fiap.com.br",
+			"cnpj": "11830861000553"
+		}
+  ```
+  
+  Função : deve cadastrar com um novo id o restaurante.
+  
+  Exemplo de reposta :
+  ```
+  {
+	"nomeRestaurante": "pocahontas",
+	"desEmail": "poc@fiap.com.br",
+	"idRestaurante": 3,
+	"cnpj": "11830861000553"
+}
+  ```
+
   
   
   
