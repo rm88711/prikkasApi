@@ -149,6 +149,13 @@ Deve passa a UTL com o id do restaurante que se quer alterar, no json deve infor
 
 
   Exemplo de requisição :
+```diff
+- texto em vermelho
++ texto em verde
+! texto em laranja
+# texto em cinza
+@@ texto em roxo (e negrito)@@
+```
   
   ```diff
   {			
