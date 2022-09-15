@@ -13,7 +13,7 @@ comando para a Machine Learning.
 Esta Api esta sendo feita apenas para manipulação de informações do Banco de Dados.
 Ela deverá receber informções do App em React-native para realizar o cadastro e alterações de informações do banco de dados Oracle.
 
-## APIs
+# APIs
 
 ## Restaurante:
 ### Retorno de informações :
@@ -134,7 +134,7 @@ Exemplo de requisição :
   ------------------------------------------------------------------------------------
   
 ### Alteração
-  **Função** : Deve alterar com um novo id o restaurante.
+  **Função** : Deve alterar as informações cadastradas do restaurante.
   Deve passa a URL com o id do restaurante que se quer alterar, no json deve informa o json existem na criação com as alterações desejadas.
   
   Metodo **PUT** 
@@ -186,6 +186,139 @@ Exemplo de requisição :
   
   Deve retornar um 204 se der certo.
   
+  -----------------------------------------------------------------------------------------------------------------------------------------------------------
+  -----------------------------------------------------------------------------------------------------------------------------------------------------------
   
+## Clientes:
+### Retorno de informações :
+
+   Metodo **GET** 
   
+  URL : **/api/cliente**
   
+  Resposta : deve restornar todos os clientes cadastrados de forma paginada.
+  
+Exemplo de requisição :
+  
+  ```
+    localhost:8080/api/cliente
+  ```
+  
+  <details>
+<summary>Exemplo de resposta:</summary><br>
+{
+	"content": [
+		{
+			"id": 1,
+			"nome": "Richard Rich",
+			"cpf": 24388521000,
+			"email": "rich@fiap.com.br"
+		},
+		{
+			"id": 2,
+			"nome": "Homem aranha",
+			"cpf": 99,
+			"email": "spider@fiap.com.br"
+		}
+	],
+	"pageable": {
+		"sort": {
+			"empty": false,
+			"sorted": true,
+			"unsorted": false
+		},
+		"offset": 0,
+		"pageNumber": 0,
+		"pageSize": 50,
+		"paged": true,
+		"unpaged": false
+	},
+	"last": true,
+	"totalElements": 2,
+	"totalPages": 1,
+	"size": 50,
+	"number": 0,
+	"sort": {
+		"empty": false,
+		"sorted": true,
+		"unsorted": false
+	},
+	"first": true,
+	"numberOfElements": 2,
+	"empty": false
+}
+</details>
+
+
+----------------------------------------------------------------------------------------------------------------------
+  ### Cadastro
+  
+  **Função** : Cadastrar um novo cliente
+  
+  Metodo **POST** 
+  
+  URL : **/api/cliente**
+  
+  | Campo do Json  | Tipo |
+| ------------- | ------------- |
+| nome  | String  |
+| cpf  | Integer  |
+| email  | String  |
+
+
+  Exemplo de requisição :
+  
+  ```
+{
+"nome": "Homem aranha",
+"cpf": 99,
+"email": "spider@fiap.com.br"
+}
+  ```
+  
+  Exemplo de reposta :
+  ```
+ {
+"id": 2,
+"nome": "Homem aranha",
+"cpf": 99,
+"email": "spider@fiap.com.br"
+}
+  ```
+ ---------------------------------------------------------------------------------------------------------------------------------------------------
+ ### Alteração
+  **Função** : Deve alterar as informações cadastradas do cliente.
+  Deve passa a URL com o id do cliente que se quer alterar, no json deve informa o json existem na criação com as alterações desejadas.
+  
+  Metodo **PUT** 
+  
+  URL : **/api/cliente/{id}**
+    
+    
+| Campo do Json  | Tipo |
+| ------------- | ------------- |
+| nome  | String  |
+| cpf  | Long  |
+| email  | String  |
+
+
+  Exemplo de requisição :
+
+  
+```
+{
+"nome": "TiraGosto",
+"cpf": 3,
+"email": "tira@fiap.com.br"
+}
+```
+    
+  Exemplo de reposta :
+  ```
+ {
+"id": 3,
+"nome": "TiraGosto",
+"cpf": 3,
+"email": "tira@fiap.com.br"
+}
+  ```
