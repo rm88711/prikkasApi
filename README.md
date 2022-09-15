@@ -16,9 +16,12 @@ Ela deverá receber informções do App em React-native para realizar o cadastro
 ##APIs
 #Restaurante:
 
-  Metodo **GET**
+  Metodo **GET** .
+  
   URL : /api/restaurante
+  
   Resposta : deve restornar todos os restaurantes cadastrados de forma paginada
+  
 Exemplo de reponse:
 ````
 {
