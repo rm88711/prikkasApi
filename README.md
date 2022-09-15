@@ -895,3 +895,295 @@ Exemplo de requisição :
   
   -----------------------------------------------------------------------------------------------------------------------------------------------------------
   -----------------------------------------------------------------------------------------------------------------------------------------------------------
+  ## Estado:
+### Retorno de informações :
+
+   Metodo **GET** 
+  
+  URL : **/api/estado**
+  
+  Resposta : deve restornar todos o estado de forma paginada.
+  
+Exemplo de requisição :
+  
+  ```
+    localhost:8080/api/estado
+  ```
+  
+  <details>
+<summary>Exemplo de resposta:</summary><br>
+{
+	"content": [
+		{
+			"idEstado": 1,
+			"nome": "ACRE",
+			"sigle": "AC"
+		},
+		{
+			"idEstado": 2,
+			"nome": "ALAGOAS",
+			"sigle": "AL"
+		},
+		{
+			"idEstado": 3,
+			"nome": "AMAPÁ",
+			"sigle": "AP"
+		},
+		{
+			"idEstado": 4,
+			"nome": "AMAZONAS",
+			"sigle": "AM"
+		},
+		{
+			"idEstado": 5,
+			"nome": "BAHIA",
+			"sigle": "BA"
+		},
+		{
+			"idEstado": 6,
+			"nome": "CEARÁ",
+			"sigle": "CE"
+		},
+		{
+			"idEstado": 7,
+			"nome": "DISTRITO FEDERAL",
+			"sigle": "DF"
+		},
+		{
+			"idEstado": 8,
+			"nome": "ESPÍRITO SANTO",
+			"sigle": "ES"
+		},
+		{
+			"idEstado": 9,
+			"nome": "GOIÁS",
+			"sigle": "GO"
+		},
+		{
+			"idEstado": 10,
+			"nome": "MARANHÃO",
+			"sigle": "MA"
+		},
+		{
+			"idEstado": 11,
+			"nome": "MATO GROSSO",
+			"sigle": "MT"
+		},
+		{
+			"idEstado": 12,
+			"nome": "MATO GROSSO DO SUL",
+			"sigle": "MS"
+		},
+		{
+			"idEstado": 13,
+			"nome": "MINAS GERAIS",
+			"sigle": "MG"
+		},
+		{
+			"idEstado": 14,
+			"nome": "PARÁ",
+			"sigle": "PA"
+		},
+		{
+			"idEstado": 15,
+			"nome": "PARAÍBA",
+			"sigle": "PB"
+		},
+		{
+			"idEstado": 16,
+			"nome": "PARANÁ",
+			"sigle": "PR"
+		},
+		{
+			"idEstado": 17,
+			"nome": "PERNAMBUCO",
+			"sigle": "PE"
+		},
+		{
+			"idEstado": 18,
+			"nome": "PIAUÍ",
+			"sigle": "PI"
+		},
+		{
+			"idEstado": 19,
+			"nome": "RIO DE JANEIRO",
+			"sigle": "RJ"
+		},
+		{
+			"idEstado": 20,
+			"nome": "RIO GRANDE DO NORTE",
+			"sigle": "RN"
+		},
+		{
+			"idEstado": 21,
+			"nome": "RIO GRANDE DO SUL",
+			"sigle": "RS"
+		},
+		{
+			"idEstado": 22,
+			"nome": "RONDÔNIA",
+			"sigle": "RO"
+		},
+		{
+			"idEstado": 23,
+			"nome": "RORAIMA",
+			"sigle": "RR"
+		},
+		{
+			"idEstado": 24,
+			"nome": "SANTA CATARINA",
+			"sigle": "SC"
+		},
+		{
+			"idEstado": 25,
+			"nome": "SÃO PAULO",
+			"sigle": "SP"
+		},
+		{
+			"idEstado": 26,
+			"nome": "SERGIPE",
+			"sigle": "SE"
+		},
+		{
+			"idEstado": 27,
+			"nome": "TOCANTINS",
+			"sigle": "TO"
+		}
+	],
+	"pageable": {
+		"sort": {
+			"empty": true,
+			"sorted": false,
+			"unsorted": true
+		},
+		"offset": 0,
+		"pageNumber": 0,
+		"pageSize": 50,
+		"paged": true,
+		"unpaged": false
+	},
+	"last": true,
+	"totalElements": 27,
+	"totalPages": 1,
+	"size": 50,
+	"number": 0,
+	"sort": {
+		"empty": true,
+		"sorted": false,
+		"unsorted": true
+	},
+	"first": true,
+	"numberOfElements": 27,
+	"empty": false
+}
+</details>
+----------------------------------------------------------------------------------------------------------------------
+  Metodo **GET** 
+  
+  URL : **/api/estado/{id}**
+  
+  Resposta : deve restornar o estado desse do {id}
+  
+  Exemplo de requisição :
+  
+  ```
+    localhost:8080/api/estado/3
+  ```
+  
+  Exemplo de resposta :
+  
+  ```
+{
+	"idEstado": 5,
+	"nome": "BAHIA",
+	"sigle": "BA"
+}
+  ```
+
+----------------------------------------------------------------------------------------------------------------------
+  ### Cadastro
+  
+  **Função** : Cadastrar um novo estado.
+  
+  Metodo **POST** 
+  
+  URL : **/api/estado**
+  
+  | Campo do Json  | Tipo |
+| ------------- | ------------- |
+| nome  | String  |
+| sigle  | String  |
+
+
+  Exemplo de requisição :
+  
+  ```
+{
+	"nome": "BAHIA",
+	"sigle": "BA"
+}
+  ```
+  
+  Exemplo de reposta :
+  ```
+{
+	"idEstado": 5,
+	"nome": "BAHIA",
+	"sigle": "BA"
+}
+  ```
+ ---------------------------------------------------------------------------------------------------------------------------------------------------
+ ### Alteração
+  **Função** : Deve alterar as informações do estado
+  Deve passa a URL com o id do estado que se quer alterar, no json deve informa o json existem na criação com as alterações desejadas.
+  
+  Metodo **PUT** 
+  
+  URL : **/api/estado/{id}**
+    
+    
+  | Campo do Json  | Tipo |
+| ------------- | ------------- |
+| nome  | String  |
+| sigle  | String  |
+
+
+  Exemplo de requisição :
+
+  
+```
+{
+	"nome": "BAHIA",
+	"sigle": "BA"
+}
+```
+    
+  Exemplo de reposta :
+  ```
+{
+	"idEstado": 5,
+	"nome": "BAHIA",
+	"sigle": "BA"
+}
+  ```
+  
+  --------------------------------------------------------------------------------------------------------------------------------------------------------
+  
+  ### Apaga
+  
+  **Função** : remove algum estado.
+  Deve passa a URL com o ID do estado a ser apagado.
+  
+  Metodo : **DELETE**
+  
+  URL : **/api/estado/{id}**
+  
+  Exemplo de requisição :
+  ```
+  localhost:8080/api/estado/2
+  ```
+  
+  Deve retornar um 204 se der certo.
+  
+  -----------------------------------------------------------------------------------------------------------------------------------------------------------
+  -----------------------------------------------------------------------------------------------------------------------------------------------------------
