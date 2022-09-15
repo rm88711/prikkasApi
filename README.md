@@ -175,7 +175,7 @@ Exemplo de requisição :
   **Função** : remove algum restaurante cadastrado.
   Deve passa a URL com o ID do restaurante a ser apagado.
   
-  Metodo : <font color="green"> DELETE </font>
+  Metodo : **DELETE**
   
   URL : **/api/restaurante/{id}**
   
