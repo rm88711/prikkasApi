@@ -76,13 +76,17 @@ Ela deverá receber informções do App em React-native para realizar o cadastro
   Resposta : deve restornar o retaurante desse do {id}
   
   Exemplo de requisição :
+  
   ´´´´
   localhost:8080/api/restaurante/1
   ´´´´
+  
   Exemplo de resposta :
+  
   ´´´´
   {"nomeRestaurante":"PRIKKAS","desEmail":"prikkas@fiap.com.br","idRestaurante":1,"cnpj":"11830861000113"}
   ´´´´
+  
   -----------------------------------------------------------------------------------------------------------
   
   
