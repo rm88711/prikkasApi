@@ -11,6 +11,7 @@ public class Estado {
 
     @Id
     @GeneratedValue(generator = "estado" , strategy = GenerationType.SEQUENCE)
+    @Column(name = "ID_ESTADO")
     private Long idEstado;
 
     @Column(name = "NM_ESTADO" , nullable = false, length = 100)

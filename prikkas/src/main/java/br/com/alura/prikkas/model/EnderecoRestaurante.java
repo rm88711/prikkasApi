@@ -4,7 +4,6 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "T_PR_END_REST")
-@SequenceGenerator(name = "enderec",sequenceName = "SQ_PR_ENDERECO", allocationSize = 1)
 public class EnderecoRestaurante {
     @Id
     @Column(name = "ID_ENDERECO", nullable = false, length = 10)

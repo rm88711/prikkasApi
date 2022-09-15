@@ -1,8 +1,7 @@
 package br.com.alura.prikkas.controller;
 
-
-import br.com.alura.prikkas.model.PedidoItem;
-import br.com.alura.prikkas.service.PedidoItemService;
+import br.com.alura.prikkas.model.Bairro;
+import br.com.alura.prikkas.service.BairroService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -15,31 +14,31 @@ import javax.validation.Valid;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/pedidoitem")
-public class PedidoItemController {
+@RequestMapping("/api/bairro")
+public class BairroController {
 
     @Autowired
-    private PedidoItemService service;
+    private BairroService service;
 
     @GetMapping
-    public Page<PedidoItem> index(@PageableDefault(size=50) Pageable paginacao){
+    public Page<Bairro> index(@PageableDefault(size=50) Pageable paginacao){
         return service.listAll(paginacao);
     }
 
     @PostMapping
-    public ResponseEntity<PedidoItem> create(@RequestBody @Valid PedidoItem pedidoitem){
-        service.save(pedidoitem);
-        return ResponseEntity.status(HttpStatus.CREATED).body(pedidoitem);
+    public ResponseEntity<Bairro> create(@RequestBody @Valid Bairro bairro){
+        service.save(bairro);
+        return ResponseEntity.status(HttpStatus.CREATED).body(bairro);
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<PedidoItem> show(@PathVariable Long id){
+    public ResponseEntity<Bairro> show(@PathVariable Long id){
         return ResponseEntity.of(service.get(id));
     }
 
     @DeleteMapping("{id}")
     public ResponseEntity<Object> destroy(@PathVariable Long id){
-        Optional<PedidoItem> optional = service.get(id);
+        Optional<Bairro> optional = service.get(id);
 
         if(optional.isEmpty())
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
@@ -49,23 +48,23 @@ public class PedidoItemController {
     }
 
     @PutMapping("{id}")
-    public ResponseEntity<PedidoItem> update(@PathVariable Long id, @RequestBody @Valid PedidoItem newPedidoItem){
+    public ResponseEntity<Bairro> update(@PathVariable Long id, @RequestBody @Valid Bairro newBairro){
         // carregar a tarefa do banco
-        Optional<PedidoItem> optional = service.get(id);
+        Optional<Bairro> optional = service.get(id);
 
         // verificar se existe a tarefa com esse id
         if(optional.isEmpty())
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 
         // atualizar os dados
-        PedidoItem pedidoitem = optional.get();
-        BeanUtils.copyProperties(newPedidoItem, pedidoitem);
-        pedidoitem.setIdPedido(id);
+        Bairro bairro = optional.get();
+        BeanUtils.copyProperties(newBairro, bairro);
+        bairro.setIdBairro(id);
 
         // salvar a tarefa
-        service.save(pedidoitem);
+        service.save(bairro);
 
-        return ResponseEntity.ok(pedidoitem);
+        return ResponseEntity.ok(bairro);
 
     }
 
