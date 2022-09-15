@@ -1187,3 +1187,228 @@ Exemplo de requisição :
   
   -----------------------------------------------------------------------------------------------------------------------------------------------------------
   -----------------------------------------------------------------------------------------------------------------------------------------------------------
+  ## Carrinho:
+### Retorno de informações :
+
+   Metodo **GET** 
+  
+  URL : **/api/carrinho**
+  
+  Resposta : deve restornar todos o carrinhos de forma paginada.
+  
+Exemplo de requisição :
+  
+  ```
+    localhost:8080/api/carrinho
+  ```
+  
+  <details>
+<summary>Exemplo de resposta:</summary><br>
+{
+	"content": [
+		{
+			"idPagamento": 999,
+			"idPedido": 122345,
+			"pagamento": "1",
+			"idEndereco": "1",
+			"tpPagamento": "1"
+		},
+		{
+			"idPagamento": 1,
+			"idPedido": 122345,
+			"pagamento": "1",
+			"idEndereco": "1",
+			"tpPagamento": "1"
+		},
+		{
+			"idPagamento": 2,
+			"idPedido": 122345,
+			"pagamento": "1",
+			"idEndereco": "1",
+			"tpPagamento": "1"
+		},
+		{
+			"idPagamento": 3,
+			"idPedido": 122345,
+			"pagamento": "1",
+			"idEndereco": "1",
+			"tpPagamento": "1"
+		},
+		{
+			"idPagamento": 4,
+			"idPedido": 122345,
+			"pagamento": "1",
+			"idEndereco": "1",
+			"tpPagamento": "1"
+		},
+		{
+			"idPagamento": 5,
+			"idPedido": 122345,
+			"pagamento": "1",
+			"idEndereco": "1",
+			"tpPagamento": "1"
+		},
+		{
+			"idPagamento": 6,
+			"idPedido": 6,
+			"pagamento": "1",
+			"idEndereco": "1",
+			"tpPagamento": "2"
+		}
+	],
+	"pageable": {
+		"sort": {
+			"empty": true,
+			"sorted": false,
+			"unsorted": true
+		},
+		"offset": 0,
+		"pageNumber": 0,
+		"pageSize": 50,
+		"paged": true,
+		"unpaged": false
+	},
+	"last": true,
+	"totalElements": 7,
+	"totalPages": 1,
+	"size": 50,
+	"number": 0,
+	"sort": {
+		"empty": true,
+		"sorted": false,
+		"unsorted": true
+	},
+	"first": true,
+	"numberOfElements": 7,
+	"empty": false
+}
+</details>
+----------------------------------------------------------------------------------------------------------------------
+  Metodo **GET** 
+  
+  URL : **/api/carrinho/{id}**
+  
+  Resposta : deve restornar o carrinho desse do {id}
+  
+  Exemplo de requisição :
+  
+  ```
+    localhost:8080/api/carrinho/3
+  ```
+  
+  Exemplo de resposta :
+  
+  ```
+{
+	"idPagamento": 3,
+	"idPedido": 122345,
+	"pagamento": "1",
+	"idEndereco": "1",
+	"tpPagamento": "1"
+}
+  ```
+
+----------------------------------------------------------------------------------------------------------------------
+  ### Cadastro
+  
+  **Função** : Cadastrar um novo carrinho.
+  
+  Metodo **POST** 
+  
+  URL : **/api/carrinho**
+  
+  | Campo do Json  | Tipo |
+| ------------- | ------------- |
+| idPagamento  | Long  |
+| idPedido  | Long  |
+| pagamento  | String  |
+| idEndereco  | String  |
+| tpPagamento  | String  |
+
+
+
+  Exemplo de requisição :
+  
+  ```
+{
+	"idPagamento": 6,
+	"idPedido": 122345,
+	"pagamento": "1",
+	"idEndereco": "1",
+	"tpPagamento": "2"
+}
+  ```
+  
+  Exemplo de reposta :
+  ```
+{
+	"idPagamento": 6,
+	"idPedido": 6,
+	"pagamento": "1",
+	"idEndereco": "1",
+	"tpPagamento": "2"
+}
+  ```
+ ---------------------------------------------------------------------------------------------------------------------------------------------------
+ ### Alteração
+  **Função** : Deve alterar as informações do carrinho
+  Deve passa a URL com o id do carrinho que se quer alterar, no json deve informa o json existem na criação com as alterações desejadas.
+  
+  Metodo **PUT** 
+  
+  URL : **/api/carrinho/{id}**
+    
+    
+  | Campo do Json  | Tipo |
+| ------------- | ------------- |
+| idPagamento  | Long  |
+| idPedido  | Long  |
+| pagamento  | String  |
+| idEndereco  | String  |
+| tpPagamento  | String  |
+
+
+  Exemplo de requisição :
+
+  
+```
+{
+	"idPagamento": 6,
+	"idPedido": 122345,
+	"pagamento": "1",
+	"idEndereco": "1",
+	"tpPagamento": "2"
+}
+```
+    
+  Exemplo de reposta :
+  ```
+{
+	"idPagamento": 6,
+	"idPedido": 122345,
+	"pagamento": "1",
+	"idEndereco": "1",
+	"tpPagamento": "2"
+}
+  ```
+  
+  --------------------------------------------------------------------------------------------------------------------------------------------------------
+  
+  ### Apaga
+  
+  **Função** : remove algum carrinho.
+  Deve passa a URL com o ID do carrinho a ser apagado.
+  
+  Metodo : **DELETE**
+  
+  URL : **/api/carrinho/{id}**
+  
+  Exemplo de requisição :
+  ```
+  localhost:8080/api/carrinho/2
+  ```
+  
+  Deve retornar um 204 se der certo.
+  
+  -----------------------------------------------------------------------------------------------------------------------------------------------------------
+  -----------------------------------------------------------------------------------------------------------------------------------------------------------
