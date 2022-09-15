@@ -101,14 +101,22 @@ Exemplo de requisição :
   
   URL : **/api/restaurante**
     
+    
+| Campo do Json  | Tipo |
+| ------------- | ------------- |
+| nomeRestaurante  | String  |
+| desEmail  | String  |
+| cnpj  | String  |
+
+
   Exemplo de requisição :
   
   ```
-  	{
-			"nomeRestaurante": "pocahontas",
-			"desEmail": "poc@fiap.com.br",
-			"cnpj": "11830861000553"
-		}
+  {			
+   "nomeRestaurante": "pocahontas",
+   "desEmail": "poc@fiap.com.br",
+   "cnpj": "11830861000553"
+}
   ```
   
   Função : deve cadastrar com um novo id o restaurante.
