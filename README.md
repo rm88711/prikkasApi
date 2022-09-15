@@ -14,6 +14,7 @@ Esta Api esta sendo feita apenas para manipulação de informações do Banco de
 Ela deverá receber informções do App em React-native para realizar o cadastro e alterações de informações do banco de dados Oracle.
 
 ##APIs
+
 #Restaurante:
 
   Metodo **GET** 
