@@ -150,7 +150,7 @@ Deve passa a UTL com o id do restaurante que se quer alterar, no json deve infor
 
   Exemplo de requisição :
   
-  ```
+  ```diff
   {			
    "nomeRestaurante": "pocahontas",
    - "desEmail": "pocahontas@fiap.com.br",
