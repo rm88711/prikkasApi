@@ -23,7 +23,7 @@ Ela deverá receber informções do App em React-native para realizar o cadastro
   
   Resposta : deve restornar todos os restaurantes cadastrados de forma paginada.
   
-<detail/s>
+<details>
 <summary>Exemplo de reponse:</summary><br>
 {
 	"content": [
