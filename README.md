@@ -97,3 +97,33 @@ Ela deverá receber informções do App em React-native para realizar o cadastro
 |GET    |http://localhost:8080/api/pedidoitem/{id}      | Retona um pedido vinculado a um item|
 |PUT    |http://localhost:8080/api/pedidoitem/{id}      | Altera um pedido vinculado no item |
 |DELETE |http://localhost:8080/api/pedidoitem/{id}      | desvincula pedido do item |
+
+
+
+
+
+COMANDOS:
+
+EXECUTAR:
+```
+./mvnw spring-boot:run
+```
+
+EMPACOTAR:
+```
+./mvnw package
+```
+
+
+CRIAR IMAGEM NO DOCKER:
+```
+docker build -t prikkas -f Dockerfile .
+```
+
+
+Executar o docker :
+```
+docker container run -it -p 8080:8080 --name prikkaApi prikkas
+```
+
+
