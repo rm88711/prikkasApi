@@ -1,0 +1,12 @@
+EXECUTAR:
+./mvnw spring-boot:run
+
+EMPACOTAR:
+./mvnw package
+
+CRIAR IMAGEM NO DOCKER:
+docker build -t prikkas -f Dockerfile .
+
+
+Executar o docker :
+docker container run -it -p 8080:8080 --name prikkaApi prikkas
