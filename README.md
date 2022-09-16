@@ -116,7 +116,7 @@ EMPACOTAR:
 
 
 CRIAR IMAGEM NO DOCKER:
-  preisar esta logado no docker
+  precisar esta logado no docker
 ```
 docker build -t prikkas -f Dockerfile .
 ```
