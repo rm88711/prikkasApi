@@ -14,6 +14,8 @@
 	<name>prikkas</name>
 	<description>api prikkas</description>
 	<properties>
+		<jib-maven-plugin.version>3.2.0</jib-maven-plugin.version>
+		<docker.image.prefix>apichallenger.azurecr.io</docker.image.prefix>
 		<java.version>1.8</java.version>
 	</properties>
 	<dependencies>
@@ -76,6 +78,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -84,6 +87,21 @@
                     <target>11</target>
                 </configuration>
             </plugin>
+
+			<plugin>
+				<artifactId>jib-maven-plugin</artifactId>
+				<groupId>com.google.cloud.tools</groupId>
+				<version>${jib-maven-plugin.version}</version>
+				<configuration>
+					<from>
+						<image>mcr.microsoft.com/java/jre:8-zulu-alpine</image>
+					</from>
+					<to>
+						<image>${docker.image.prefix}/0.0.1</image>
+					</to>
+				</configuration>
+			</plugin>
+
         </plugins>
 	</build>
 	<dependencyManagement>

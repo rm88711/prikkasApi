@@ -3,6 +3,7 @@ EXECUTAR:
 
 EMPACOTAR:
 ./mvnw package
+java -jar ./target/prikkas-0.0.1-SNAPSHOT.jar
 
 CRIAR IMAGEM NO DOCKER:
 docker build -t prikkas -f Dockerfile .
@@ -10,3 +11,6 @@ docker build -t prikkas -f Dockerfile .
 
 Executar o docker :
 docker container run -it -p 8080:8080 --name prikkaApi prikkas
+
+
+https://docs.microsoft.com/pt-br/azure/developer/java/spring-framework/deploy-spring-boot-java-app-on-linux
