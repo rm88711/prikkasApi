@@ -1,27 +1,24 @@
 # PrikkasApi
-------------------------------------------------------------------------------
-  Api para manipulação de dados do banco
+- Api para manipulação de dados do banco
+---------------------------------------------------------------------------------------------------------------------------------------------------- 
 
-INTEGRANTES:
-
-Gabriel Sun Gonçalo da Silva                RM: 88316
-
-Kleber Albert de Sousa Monteiro             RM: 88711
-
-Mikael Candiani Tine                        RM: 85250
-
-Renato Miranda Esmail                       RM: 86701
+## Integrantes
+- Gabriel Sun Gonçalo da Silva      - **RM:** 88316
+- Kleber Albert de Sousa Monteiro   - **RM:** 88711 
+- Mikael Candiani Tine              - **RM:** 85250
+- Renato Miranda Esmail             - **RM:** 86701
 
 
 ## Descrição: 
+- O App será desenvolvido em React Native sendo compatível tanto para Android como para IOS que se comunicará com a Api via Json.
 
-O App será desenvolvido em React Native sendo compatível tanto para Android como 
-para IOS que se comunicará com a Api via Json.
-As APIs estarão em nuvem (Azure) e serão feitas em Java, as Api deverão enviar o 
-comando para a Machine Learning.
+- As APIs estarão na nuvem (Azure) e serão feitas em Java, as Api deverão enviar o comando para a Machine Learning.
 
-Esta Api esta sendo feita apenas para manipulação de informações do Banco de Dados.
-Ela deverá receber informções do App em React-native para realizar o cadastro e alterações de informações do banco de dados Oracle.
+- Esta Api está sendo feita apenas para manipulação de informações do Banco de Dados.
+
+- Ela deverá receber informações do App em React-native para realizar o cadastro e alterações de informações do banco de dados Oracle.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------- 
 
 # EndPoints
 
@@ -108,14 +105,14 @@ Ela deverá receber informções do App em React-native para realizar o cadastro
 |PUT    |http://localhost:8080/api/pedidoitem/{id}      | Altera um pedido vinculado no item |
 |DELETE |http://localhost:8080/api/pedidoitem/{id}      | desvincula pedido do item |
 
-
+---------------------------------------------------------------------------------------------------------------------------------------------------- 
 
 **Arquitetura**
 
 
 <img src="/arquitetura.png" alt="My cool logo"/>
 
-
+---------------------------------------------------------------------------------------------------------------------------------------------------- 
 
 COMANDOS:
 
@@ -142,6 +139,7 @@ Executar o docker :
 docker container run -it -p 8080:8080 --name prikkaApi prikkas
 ```
 
+---------------------------------------------------------------------------------------------------------------------------------------------------- 
 
 Api esta disponível para teste no heroku até o dia 27 de Novembro :
 
