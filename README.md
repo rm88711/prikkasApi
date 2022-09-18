@@ -133,7 +133,7 @@ docker container run -it -p 8080:8080 --name prikkaApi prikkas
 ```
 
 
-Api esta disponível para teste no heroku:
+Api esta disponível para teste no heroku até o dia 27 de Novembro :
 
 EX:
 
