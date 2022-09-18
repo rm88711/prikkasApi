@@ -144,5 +144,4 @@ docker container run -it -p 8080:8080 --name prikkaApi prikkas
 Api esta disponível para teste no heroku até o dia 27 de Novembro :
 
 EX:
-
-https://testeprikkas.herokuapp.com/api/cliente/
+[API no Heroku](https://testeprikkas.herokuapp.com/api/cliente/)
