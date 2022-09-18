@@ -1,0 +1,33 @@
+# Created at 2022-09-16T10:36:50.771
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: null
+java.io.EOFException
+	at java.base/java.io.DataInputStream.readInt(DataInputStream.java:397)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:391)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+
+# Created at 2022-09-16T10:36:51.631
+Unexpected IOException with stream: 2022-09-16 10:36:51.630  WARN 25796 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+
+
+# Created at 2022-09-16T10:36:52.492
+Unexpected IOException with stream: 2022-09-16 10:36:52.492  INFO 25796 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+
+
+# Created at 2022-09-16T10:36:52.558
+Unexpected IOException with stream: 2022-09-16 10:36:52.558  INFO 25796 --- [           main] b.c.a.prikkas.PrikkasApplicationTests    : Started PrikkasApplicationTests in 8.385 seconds (JVM running for 9.182)
+
+
+# Created at 2022-09-16T10:36:52.583
+Unexpected IOException: 5,1,br.com.alura.prikkas.PrikkasApplicationTests,contextLoads,null,null,null
+
+
+# Created at 2022-09-16T10:36:52.684
+Unexpected IOException: 6,1,br.com.alura.prikkas.PrikkasApplicationTests,contextLoads,null,null,null
+
+
+# Created at 2022-09-16T10:36:52.688
+Unexpected IOException: 2,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,br.com.alura.prikkas.PrikkasApplicationTests,null,null,null
+
+
