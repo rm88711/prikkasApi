@@ -100,7 +100,8 @@ Ela deverá receber informções do App em React-native para realizar o cadastro
 
 
 
-arquitetura.png
+**Arquitetura**
+
 
 <img src="/arquitetura.png" alt="My cool logo"/>
 
