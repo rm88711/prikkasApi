@@ -2,7 +2,6 @@
 ------------------------------------------------------------------------------
   Api para manipulação de dados do banco
 
-/*
 INTEGRANTES:
 
 Gabriel Sun Gonçalo da Silva                RM: 88316
@@ -13,7 +12,6 @@ Mikael Candiani Tine                        RM: 85250
 
 Renato Miranda Esmail                       RM: 86701
 
-*/
 
 ## Descrição: 
 
